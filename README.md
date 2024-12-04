@@ -85,5 +85,5 @@ A sleek and efficient Task Management Dashboard built with **React**, **Tailwind
 4. Start the development server:
 
    ```bash
-   npm start
+   npm run dev
    ```
