@@ -5,6 +5,7 @@ import {
   ChartLegendContent,
 } from "@/components/ui/chart";
 import { useSelector } from "react-redux";
+import NoDataAvailable from "./NoDataAvailable";
 
 const TaskStatusChart = () => {
   const { items } = useSelector((state) => state.task);
@@ -47,18 +48,22 @@ const TaskStatusChart = () => {
       <h2 className="text-2xl font-bold text-center text-gray-800 tracking-wide mb-4">
         Task Distribution by Status
       </h2>
-      <ChartContainer
-        config={chartConfig}
-        className="mx-auto aspect-square max-h-[300px]"
-      >
-        <PieChart>
-          <Pie data={chartData} dataKey="tasks" nameKey="status" />
-          <ChartLegend
-            content={<ChartLegendContent nameKey="status" />}
-            className="-translate-y-2 flex-wrap gap-2 [&>*]:basis-1/4 [&>*]:justify-center"
-          />
-        </PieChart>
-      </ChartContainer>
+      {items.length === 0 ? (
+        <NoDataAvailable />
+      ) : (
+        <ChartContainer
+          config={chartConfig}
+          className="mx-auto aspect-square max-h-[300px]"
+        >
+          <PieChart>
+            <Pie data={chartData} dataKey="tasks" nameKey="status" />
+            <ChartLegend
+              content={<ChartLegendContent nameKey="status" />}
+              className="-translate-y-2 flex-wrap gap-2 [&>*]:basis-1/4 [&>*]:justify-center"
+            />
+          </PieChart>
+        </ChartContainer>
+      )}
     </div>
   );
 };
