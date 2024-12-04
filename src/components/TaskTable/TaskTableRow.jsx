@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import { TableCell, TableRow } from "@/components/ui/table";
 import { Circle, CircleCheck, SquarePen } from "lucide-react";
-import DeleteAlert from "../deleteAlert";
+import DeleteAlert from "../DeleteAlert";
 import { useDispatch } from "react-redux";
 import { setCurrentTaskData } from "@/store/features/taskData/taskDataSlice";
 import { Badge } from "../ui/badge";
