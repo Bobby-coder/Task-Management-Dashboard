@@ -1,10 +1,15 @@
-import { Button } from "@/components/ui/button"
+import ProductTable from "./components/TaskTable/TaskTable";
+import TaskStatusChart from "./components/TaskStatusChart";
+import { Header } from "./components/Header";
 
 function App() {
   return (
     <>
-      <h1 className="text-3xl font-bold underline">Hello world!</h1>
-      <Button>Click me</Button>
+      <Header />
+      <div className="flex flex-col justify-center mx-6">
+        <ProductTable />
+        <TaskStatusChart />
+      </div>
     </>
   );
 }
